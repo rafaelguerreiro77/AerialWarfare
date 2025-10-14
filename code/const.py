@@ -1,0 +1,15 @@
+# C
+COLOR_AMARELO = (255, 255, 62)
+COLOR_VERDE = (105, 252, 108)
+COLOR_BRANCO = (255, 255, 255)
+
+# M
+MENU_OPTION = ('NEW GAME 1P',
+               'NEW GAME 2P - COOPERATIVE',
+               'NEM GAME 2P - COMPETITIVE',
+               'SCORE',
+               'EXIT')
+
+#W
+WIN_WIDTH = 480
+WIN_HEIGHT = 600
