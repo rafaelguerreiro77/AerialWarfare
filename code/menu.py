@@ -10,12 +10,12 @@ from code.const import WIN_WIDTH, COLOR_AMARELO, MENU_OPTION, COLOR_BRANCO, COLO
 class Menu:
     def __init__(self, window):
         self.window = window
-        self.surf = pygame.image.load('./asset/fundomenu.jpg')
+        self.surf = pygame.image.load('./asset/fundomenu.jpg').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self, ):
         menu_option = 0
-        pygame.mixer_music.load('./asset/menu.wav')
+        pygame.mixer_music.load('./asset/somFundo.wav')
         pygame.mixer_music.play(-1)  # -1 toca indefinidamente
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
