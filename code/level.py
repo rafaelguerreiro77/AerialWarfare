@@ -19,6 +19,7 @@ class Level:
         self.game_mode = game_mode
         self.entity_list: list[Entity] = []
         self.entity_list.extend(EntityFactory.get_entity('Level1Bg'))
+        self.entity_list.append(EntityFactory.get_entity('Player1'))
 
     def run(self):
         pygame.mixer_music.load('./asset/menu.wav')
@@ -27,9 +28,8 @@ class Level:
         while True:
             clock.tick(60)
             for ent in self.entity_list:
-                ent.move()
                 self.window.blit(source=ent.surf, dest=ent.rect)
-
+                ent.move()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
