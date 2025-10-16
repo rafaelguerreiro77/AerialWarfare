@@ -1,12 +1,13 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import random
 import sys
 
 import pygame
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.const import COLOR_BRANCO, WIN_HEIGHT
+from code.const import COLOR_BRANCO, WIN_HEIGHT, MENU_OPTION, EVENTY_ENEMY
 from code.entity import Entity
 from code.entityFactory import EntityFactory
 
@@ -20,9 +21,13 @@ class Level:
         self.entity_list: list[Entity] = []
         self.entity_list.extend(EntityFactory.get_entity('Level1Bg'))
         self.entity_list.append(EntityFactory.get_entity('Player1'))
+        if game_mode in [MENU_OPTION[1], MENU_OPTION[2]]:
+            self.entity_list.append(EntityFactory.get_entity('Player2'))
+        pygame.time.set_timer(EVENTY_ENEMY, 2500)
 
     def run(self):
         pygame.mixer_music.load('./asset/menu.wav')
+        pygame.mixer.music.set_volume(0.1)
         pygame.mixer_music.play(-1)
         clock = pygame.time.Clock()
         while True:
@@ -34,6 +39,9 @@ class Level:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.type == EVENTY_ENEMY:
+                    choice = random.choice(('Enemy1', 'Enemy2', 'Enemy3'))
+                    self.entity_list.append(EntityFactory.get_entity(choice))
 
             # printed text
             self.level_text(14, f'{self.name} - Timeout: {self.timeout/1000 :.1f}s', COLOR_BRANCO, (10,5))
