@@ -1,3 +1,5 @@
+from code.EnemyShot import EnemyShot
+from code.PlayerShot import PlayerShot
 from code.const import WIN_HEIGHT
 from code.enemy import Enemy
 from code.entity import Entity
@@ -8,7 +10,13 @@ class EntityMediator:
     @staticmethod
     def __verity_collision_window(ent: Entity):
         if isinstance(ent, Enemy):
-            if ent.rect.top > WIN_HEIGHT:
+            if ent.rect.top >= WIN_HEIGHT:
+                ent.health = 0
+        if isinstance(ent, PlayerShot):
+            if ent.rect.bottom <= 0:
+                ent.health = 0
+        if isinstance(ent, EnemyShot):
+            if ent.rect.top >= WIN_HEIGHT:
                 ent.health = 0
 
         pass
