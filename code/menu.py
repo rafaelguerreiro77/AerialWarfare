@@ -21,7 +21,9 @@ class Menu:
             self.window.blit(source=self.surf, dest=self.rect)
             self.menu_text(50,"AERIAL", COLOR_AMARELO,((WIN_WIDTH / 2), 80))
             self.menu_text(50,"WARFARE", COLOR_AMARELO,((WIN_WIDTH / 2), 130))
-
+            self.menu_text(13, "Player1: Mover Nave: Setas Left e Right | Tiro: Space", COLOR_AMARELO, ((WIN_WIDTH / 2), 450))
+            self.menu_text(13, "Player2: Mover Nave: Tecla A (left) e Tecla D (Right) | Tiro: LCtrl", COLOR_AMARELO,
+                           ((WIN_WIDTH / 2), 480))
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
                     self.menu_text(20, MENU_OPTION[i], COLOR_RED, ((WIN_WIDTH / 2), 250 + 30 * i))
@@ -45,11 +47,11 @@ class Menu:
                             menu_option -= 1
                         else:
                             menu_option = len(MENU_OPTION) -1
-                    if event.key == pygame.K_RETURN:  # ENTER
+                    if event.key in (pygame.K_RETURN, pygame.K_KP_ENTER):  # ENTER
                         return MENU_OPTION[menu_option]
 
     def menu_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
-        text_font: Font = pygame.font.SysFont(name="Comic Sans MS", size=text_size)
+        text_font: Font = pygame.font.SysFont(name="Arial Black", size=text_size)
         text_surf: Surface = text_font.render(text, True, text_color).convert_alpha()
         text_rect: Rect = text_surf.get_rect(center=text_center_pos)
         self.window.blit(source=text_surf, dest=text_rect)

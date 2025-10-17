@@ -33,6 +33,10 @@ class EntityMediator:
             valid_interaction = True
         elif isinstance(ent1, Player) and isinstance(ent2, EnemyShot):
             valid_interaction = True
+        elif isinstance(ent1, Enemy) and isinstance(ent2, Player):
+            valid_interaction = True
+        elif isinstance(ent1, Player) and isinstance(ent2, Enemy):
+            valid_interaction = True
 
         if valid_interaction:  # é a mesma coisa que valid_interaction == True:
             if (ent1.rect.right >= ent2.rect.left and ent1.rect.left <= ent2.rect.right and
@@ -58,8 +62,8 @@ class EntityMediator:
         for i in range(len(entity_list)):
             entity1 = entity_list[i]
             EntityMediator.__verity_collision_window(entity1)
-            for i in range(i + 1, len(entity_list)):
-                entity2 = entity_list[i]
+            for j in range(i + 1, len(entity_list)):
+                entity2 = entity_list[j]
                 EntityMediator.__verity_collision_entity(entity1, entity2)
 
     @staticmethod
