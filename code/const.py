@@ -78,7 +78,7 @@ ENTITY_SCORE = {
 # M
 MENU_OPTION = ('NEW GAME 1P',
                'NEM GAME 2P',
-               'SCORE',
+               # 'SCORE',
                'EXIT')
 
 # P
