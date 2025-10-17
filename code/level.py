@@ -8,7 +8,7 @@ from pygame import Surface, Rect
 from pygame.font import Font
 
 from code.EntityMediator import EntityMediator
-from code.const import COLOR_BRANCO, WIN_HEIGHT, MENU_OPTION, EVENTY_ENEMY, COLOR_GREEN, COLOR_CYAN
+from code.const import COLOR_BRANCO, WIN_HEIGHT, MENU_OPTION, EVENTY_ENEMY, COLOR_GREEN, COLOR_CYAN, COLOR_AMARELO
 from code.enemy import Enemy
 from code.entity import Entity
 from code.entityFactory import EntityFactory
@@ -43,9 +43,9 @@ class Level:
                     if shoot is not None:
                         self.entity_list.append(shoot)
                 if ent.name == 'Player1':
-                    self.level_text(14, f'Player1 - Health:{ent.health} | Score:{ent.score}', COLOR_GREEN, (10, 22))
+                    self.level_text(14, f'Player1 - Health:{ent.health} | Score:{ent.score}', COLOR_AMARELO, (10, 22))
                 if ent.name == 'Player2':
-                    self.level_text(14, f'Player2 - Health:{ent.health} | Score:{ent.score}', COLOR_CYAN, (10, 36))
+                    self.level_text(14, f'Player2 - Health:{ent.health} | Score:{ent.score}', COLOR_BRANCO, (10, 36))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -54,10 +54,18 @@ class Level:
                     choice = random.choice(('Enemy1', 'Enemy2', 'Enemy3'))
                     self.entity_list.append(EntityFactory.get_entity(choice))
 
+                found_player = False
+                for ent in self.entity_list:
+                    if isinstance(ent, Player):
+                        found_player = True
+                if not found_player:
+                    return False
+
+
             # printed text
-            self.level_text(14, f'{self.name} - Timeout: {self.timeout/1000 :.1f}s', COLOR_BRANCO, (10,5))
-            self.level_text(14, f'fps: {clock.get_fps():.0f}', COLOR_BRANCO, (10, WIN_HEIGHT - 35))
-            self.level_text(14, f'entidades: {len(self.entity_list)}', COLOR_BRANCO, (10, WIN_HEIGHT - 20))
+            # self.level_text(14, f'{self.name}', COLOR_BRANCO, (10,5))
+            # self.level_text(14, f'fps: {clock.get_fps():.0f}', COLOR_BRANCO, (10, WIN_HEIGHT - 35))
+            # self.level_text(14, f'entidades: {len(self.entity_list)}', COLOR_BRANCO, (10, WIN_HEIGHT - 20))
             pygame.display.flip()
             # Collisions
             EntityMediator.verify_collision(entity_list=self.entity_list)
