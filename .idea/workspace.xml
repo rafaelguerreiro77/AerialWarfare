@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b46aee2-5685-4fda-89b7-edad97a72772" name="Changes" comment="corrigido Menu&#10;colocado explicação&#10;acertando Enter teclado">
-      <change afterPath="$PROJECT_DIR$/code/Score.py" afterDir="false" />
+    <list default="true" id="8b46aee2-5685-4fda-89b7-edad97a72772" name="Changes" comment="jogo finalizado">
+      <change afterPath="$PROJECT_DIR$/asset/fundomenu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/gameover.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/score.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset/fundomenu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Score.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Score.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/const.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/const.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/level.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/level.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/menu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,19 +38,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.background.executor&quot;: &quot;Run&quot;,
-    &quot;Python.const.executor&quot;: &quot;Run&quot;,
-    &quot;Python.game.executor&quot;: &quot;Run&quot;,
-    &quot;Python.level.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.menu.executor&quot;: &quot;Run&quot;,
-    &quot;Python.player.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Score.executor": "Run",
+    "Python.background.executor": "Run",
+    "Python.const.executor": "Run",
+    "Python.game.executor": "Run",
+    "Python.level.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.menu.executor": "Run",
+    "Python.player.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Lenovo\Documents\Uninter\Programação Aplicada\Projeto Jogo\AerialWarfare\asset" />
@@ -203,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760707644189</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="jogo finalizado">
+      <option name="closed" value="true" />
+      <created>1760740672827</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1760740672827</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,6 +243,7 @@
     <MESSAGE value="Hit box Collition&#10;Score e Helth" />
     <MESSAGE value="teste" />
     <MESSAGE value="corrigido Menu&#10;colocado explicação&#10;acertando Enter teclado" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrigido Menu&#10;colocado explicação&#10;acertando Enter teclado" />
+    <MESSAGE value="jogo finalizado" />
+    <option name="LAST_COMMIT_MESSAGE" value="jogo finalizado" />
   </component>
 </project>

@@ -4,13 +4,14 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.const import WIN_WIDTH, COLOR_AMARELO, MENU_OPTION, COLOR_BRANCO, COLOR_RED
+from code.const import WIN_WIDTH, COLOR_AMARELO, MENU_OPTION, COLOR_BRANCO, COLOR_RED, COLOR_CYAN, COLOR_GREEN, \
+    COLOR_VERDE, COLOR_BLACK
 
 
 class Menu:
     def __init__(self, window):
         self.window = window
-        self.surf = pygame.image.load('./asset/fundomenu.jpg').convert_alpha()
+        self.surf = pygame.image.load('./asset/fundomenu.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self, ):
@@ -19,16 +20,16 @@ class Menu:
         pygame.mixer_music.play(-1)  # -1 toca indefinidamente
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50,"AERIAL", COLOR_AMARELO,((WIN_WIDTH / 2), 80))
-            self.menu_text(50,"WARFARE", COLOR_AMARELO,((WIN_WIDTH / 2), 130))
-            self.menu_text(13, "Player1: Mover Nave: Setas Left e Right | Tiro: Space", COLOR_AMARELO, ((WIN_WIDTH / 2), 450))
-            self.menu_text(13, "Player2: Mover Nave: Tecla A (left) e Tecla D (Right) | Tiro: LCtrl", COLOR_AMARELO,
+            self.menu_text(50,"AERIAL", COLOR_GREEN,((WIN_WIDTH / 2), 80))
+            self.menu_text(50,"WARFARE", COLOR_GREEN,((WIN_WIDTH / 2), 130))
+            self.menu_text(13, "Player1: Mover Nave: Setas Left e Right | Tiro: Space", COLOR_BLACK, ((WIN_WIDTH / 2), 450))
+            self.menu_text(13, "Player2: Mover Nave: Tecla A (left) e Tecla D (Right) | Tiro: LCtrl", COLOR_BLACK,
                            ((WIN_WIDTH / 2), 480))
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
                     self.menu_text(20, MENU_OPTION[i], COLOR_RED, ((WIN_WIDTH / 2), 250 + 30 * i))
                 else:
-                    self.menu_text(20, MENU_OPTION[i], COLOR_BRANCO, ((WIN_WIDTH / 2), 250 + 30 * i))
+                    self.menu_text(20, MENU_OPTION[i], COLOR_CYAN, ((WIN_WIDTH / 2), 250 + 30 * i))
             pygame.display.flip()
 
             # check por todos os eventos
